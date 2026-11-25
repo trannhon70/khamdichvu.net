@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Trang chủ
+RewriteRule ^trang-chu\.html$ index.php [L]
+
+# Rule cụ thể
+RewriteRule ^load/bvdkht\.vn/([a-zA-Z0-9_-]+)\.html$ load/bvdkht.vn/index.html?tintuc=$1 [L,QSA]
+
+# URL dạng /danhmuc/chuyende
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ danh-sach-bai-viet.php?danhmuc=$1&chuyende=$2 [L,QSA]
+
+# URL dạng /ten-danh-muc.html
+RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L,QSA]
